@@ -1,0 +1,163 @@
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+       -o-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.top{
+  width:100%;
+  height: 24px;
+  background-color: #38AEF0;
+  &__word {
+    text-align: center;
+    color: #ffffff;
+    font-weight: bold;
+  }
+}
+
+.contents {
+  display: flex;
+}
+
+.side {
+  height: 100vh;
+  width: 300px;
+  float: left;
+  &__header {
+    background-color: #253141;
+    height: 100px;
+    padding: 0 20px;
+    &__box {
+      &__username{
+        color: #ffffff;
+        font-weight: bold;
+        font-size:16px;
+        line-height: 100px;
+        float: left;
+      }
+      &__menu{
+        .icon{
+          color: #ffffff;
+        }
+        float: right;
+        line-height: 100px;
+      }
+    }
+  }
+
+  &__contents{
+    background-color: #2f3e51;
+    height: calc(100vh - 100px);
+    padding: 20px 20px 0px 20px;
+    overflow: scroll;
+    &__groupslist{
+      color: #ffffff;
+      margin-bottom: 40px;
+      .class1{
+        font-size:15px;
+        padding-bottom: 5px;
+        font-weight: bold;
+      }
+      .class2{
+        font-size:11px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.main{
+  float: left;
+  width: calc(100vw - 300px);
+  height: 100vh;
+  &__header {
+    padding: 0 40px;
+    height: 100px;
+    border-bottom: solid 1px #eeeeee;
+    overflow: scroll;
+    &__leftbox{
+        float: left;
+        list-style: none;
+        .class1{
+          font-size:20px;
+          padding-top: 35px;
+          color: #333333;
+        }
+        .class2{
+          font-size:12px;
+          padding-top: 15px;
+          color: #999999;
+        }
+      }
+    &__editbtn{
+      float: right;
+      line-height: 40px;
+      margin-top: 28px;
+      padding: 0 20px;
+      height: 40px;
+      border: solid 1px #38aef0;
+      color: #38aef0;
+      }
+  }  
+  &__contents {
+    padding: 46px 40px;
+    background-color: #fafafa;
+    height: calc(100vh - 190px);
+    overflow: scroll;
+    &__message {
+      .font-small{
+        font-size:12px;
+        color: #999999;
+      }
+      .class1{
+        font-size:16px;
+        padding-bottom: 10px;
+        color: #434A54;
+      }
+      .class2{
+        font-size:14px;
+        padding-bottom: 40px;
+        color: #434A54;
+      }
+    }
+  }
+  &__form {
+    height: 90px;
+    width:100%;
+    background:#ddd;
+    padding: 20px 40px;
+    &__box{
+      background:#ffffff;
+      height: 50px;
+      width: 945px;
+      float: left;
+      padding: 0 10px;
+      &__text{
+        line-height: 50px;
+        font-size:16px;
+        color: #434a54;
+        float: left
+        }
+      &__image{
+        float: right;
+        line-height: 50px;
+        .icon{
+          color: #000000;
+        }
+        }
+      }
+    &__btn{
+      background:#38aef0;
+      color: #ffffff;
+      text-align: center;
+      line-height: 50px;
+      float: right;
+      height: 50px;
+      width: 100px;
+      margin-left: 15px;
+      }
+    }
+
+}

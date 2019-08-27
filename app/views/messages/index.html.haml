@@ -1,64 +1,72 @@
-.top-box
-  .top-box__word
+.top
+  .top__word
     グループを作成しました
 
 
-.side-box
-  .side-box__side-header
-    .side-box__side-header__box
-      .side-box__side-header__box__user-name
-        test-user
-      .side-box__side-header__box__menu
-        .side-box__side-header__box__menu__new-group
-          -# <a href="/groups/new"><i class="fa fa-edit"></i>
-          -#      </a></li>
-        .side-box__side-header__box__menu__edit-user
-          -# <a href="/groups/new"><i class="fa fa-edit"></i>
-          -#      </a></li>
-  .side-box__side-contents
-    .side-box__side-contents__groups-list
-      .side-box__side-contents__groups-list__group
-        .side-box__side-contents__groups-list__group__group-name
-          グループ名
-        .side-box__side-contents__groups-list__group__label-message
-          message
-
-
-.main-box
-  .main-box__main-header
-    .main-box__main-header__left-box
-      .main-box__main-header__left-box__current-group
-        グループ名
-      .main-box__main-header__left-box__member-list
-        Member：test-user,test-user2,test-user3
-    .main-box__main-header__edit-btn
-      Edit
-
-  .main-box__main-contents
-    .main-box__main-contents__message
-      .main-box__main-contents__message__info
-        .main-box__main-contents__message__info__talker
+.contents
+  .side
+    .side__header
+      .side__header__box
+        .side__header__box__username
           test-user
-        .main-box__main-contents__message__info__date
-          2019/08/27(Tue)12:00:00
-      .main-box__main-contents__message__text
-        こんにちわ！
-    .main-box__main-contents__message2
-      .main-box__main-contents__message2__info
-        .main-box__main-contents__message2__info__talker
-          test-user
-        .main-box__main-contents__message2__info__date
-          2019/08/27(Tue)12:30:00
-      .main-box__main-contents__message2__text
-        さようなら！
+        .side__header__box__menu
+          =link_to "https://" do
+            = fa_icon 'pencil-square-o' ,class: "icon"
+          =link_to "https://" do
+            = fa_icon 'cog' ,class: "icon"
+        
+    .side__contents
+      .side__contents__groupslist
+        %ul
+          %li.class1
+            グループ名
+          %li.class2
+            message
+      .side__contents__groupslist
+        %ul
+          %li.class1
+            グループ名2
+          %li.class2
+            message2
 
-  .main-box__form
-    .main-box__form__new-message
-      .main-box__form__new-message__input-box
-        .main-box__form__new-message__input-box__text
-        .main-box__form__new-message__input-box__image
-      .main-box__form__new-message__send-btn
+  .main
+    .main__header
+      .main__header__leftbox
+        %ul
+          %li.class1
+            グループ名
+          %li.class2
+            Member：test-user,test-user2,test-user3
+      .main__header__editbtn
+        Edit
+
+    .main__contents
+      .main__contents__message
+        %ul
+          %li.class1
+            test-user
+            %span.font-small  2019/08/27(Tue)12:00:00
+          %li.class2
+            こんにちわ！
+      .main__contents__message
+        %ul
+          %li.class1
+            test-user
+            %span.font-small  2019/08/27(Tue)12:00:00
+          %li.class2
+            サヨウナラ！！
+      
+    .main__form
+      .main__form__box
+        .main__form__box__text
+          type a message
+        .main__form__box__image
+          =link_to "https://" do
+            = fa_icon 'image' ,class: "icon"
+         
+      .main__form__btn
         Send
+
 
 
 
