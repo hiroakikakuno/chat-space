@@ -1,0 +1,72 @@
+.top
+  .top__word
+    グループを作成しました
+
+
+.contents
+  .side
+    .side__header
+      .side__header__box
+        .side__header__box__username
+          test-user
+        .side__header__box__menu
+          =link_to "https://" do
+            = fa_icon 'pencil-square-o' ,class: "icon"
+          =link_to "https://" do
+            = fa_icon 'cog' ,class: "icon"
+        
+    .side__contents
+      .side__contents__groupslist
+        %ul
+          %li.class1
+            グループ名
+          %li.class2
+            message
+      .side__contents__groupslist
+        %ul
+          %li.class1
+            グループ名2
+          %li.class2
+            message2
+
+  .main
+    .main__header
+      .main__header__leftbox
+        %ul
+          %li.class1
+            グループ名
+          %li.class2
+            Member：test-user,test-user2,test-user3
+      .main__header__editbtn
+        Edit
+
+    .main__contents
+      .main__contents__message
+        %ul
+          %li.class1
+            test-user
+            %span.font-small  2019/08/27(Tue)12:00:00
+          %li.class2
+            こんにちわ！
+      .main__contents__message
+        %ul
+          %li.class1
+            test-user
+            %span.font-small  2019/08/27(Tue)12:00:00
+          %li.class2
+            サヨウナラ！！
+      
+    .main__form
+      .main__form__box
+        .main__form__box__text
+          type a message
+        .main__form__box__image
+          =link_to "https://" do
+            = fa_icon 'image' ,class: "icon"
+         
+      .main__form__btn
+        Send
+
+
+
+
