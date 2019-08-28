@@ -22,6 +22,9 @@
 }
 
 .side {
+  a {
+    text-decoration: none;
+    }
   height: 100vh;
   width: 300px;
   float: left;
@@ -53,17 +56,20 @@
     padding: 20px 20px 0px 20px;
     overflow: scroll;
     &__groupslist{
-      color: #ffffff;
-      margin-bottom: 40px;
-      .class1{
-        font-size:15px;
-        padding-bottom: 5px;
-        font-weight: bold;
-      }
-      .class2{
-        font-size:11px;
-        font-weight: bold;
-      }
+      .group{
+        margin-bottom: 40px;
+        .name{
+          color : #ffffff;
+          font-size:15px;
+          padding-bottom: 5px;
+          font-weight: bold;
+        }
+        .message{
+          color : #ffffff;
+          font-size:11px;
+          font-weight: bold;
+        }
+        }
     }
   }
 }
