@@ -1,49 +1,38 @@
-.top
-  .top__word
-    グループを作成しました
+-# .top
+-#   .top__word
+-#     グループを作成しました
 
 
 .contents
-  = render 'shared/side_bar'
+  .side
+    = render 'shared/side_bar'
 
   .main
     .main__header
-      .main__header__leftbox
-        %ul
-          %li.class1
-            グループ名
-          %li.class2
-            Member：test-user,test-user2,test-user3
+      .group-data
+        .groupname
+          = @group.name
+        .member
+          Member :
+          - @group.users.each do |groupname|
+            = groupname.name
+
+         
       .main__header__editbtn
         Edit
 
     .main__contents
-      .main__contents__message
-        %ul
-          %li.class1
-            test-user
-            %span.font-small  2019/08/27(Tue)12:00:00
-          %li.class2
-            こんにちわ！
-      .main__contents__message
-        %ul
-          %li.class1
-            test-user
-            %span.font-small  2019/08/27(Tue)12:00:00
-          %li.class2
-            サヨウナラ！！
+      = render @messages
       
     .main__form
-      .main__form__box
-        .main__form__box__text
-          type a message
-        .main__form__box__image
-          =link_to "https://" do
-            = fa_icon 'image' ,class: "icon"
-         
-      .main__form__btn
-        Send
-
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'box__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+          = f.file_field :image, class: 'hidden'
+        = f.button type: 'submit', class: 'form__submit' do
+          %span Send
 
 
 
