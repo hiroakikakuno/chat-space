@@ -1,7 +1,3 @@
-// $(function(){
-//   console.log("OK");
-// });
-
 $(document).on('turbolinks:load', function(){
 
   function buildHTML(jdata){
