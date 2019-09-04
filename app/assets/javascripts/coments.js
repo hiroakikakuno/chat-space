@@ -2,7 +2,7 @@ $(document).on('turbolinks:load', function(){
 
   function buildHTML(jdata){
  
-    var imageHTML = jdata.image.url ? `<img src="${jdata.image.url}"> ` : ``;
+    var imageHTML = jdata.image.url? `<img src="${jdata.image.url}"> ` : ``;
     
     var html = 
     `<div class="message">
@@ -22,7 +22,7 @@ $(document).on('turbolinks:load', function(){
       ${imageHTML}
       </div>`
 
-    return html;
+      return html;
   }
 
   $('#new_message').on('submit', function(e){
