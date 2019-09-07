@@ -37,6 +37,7 @@
             = f.hidden_field :user_ids, value: groupname.id, name: "group[user_ids][]", class: "user-js"
             %p.chat-group-user__name  
               = groupname.name
+            %a.user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn 削除 
 
 
   / 情報の更新ボタン

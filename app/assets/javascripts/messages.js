@@ -31,7 +31,7 @@ $(document).on('turbolinks:load', function(){
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action')
-
+  
     $.ajax({
       url: url,
       type: "POST",
@@ -44,13 +44,18 @@ $(document).on('turbolinks:load', function(){
     .done(function(jdata){
       var html = buildHTML(jdata);
       $('.main__contents').append(html)
-      $('.new_message')[0].reset();
+      $('#new_message')[0].reset();
+      // $(".form__submit").attr('disabled', false);
       $('.main__contents').animate({ scrollTop: $('.main__contents')[0].scrollHeight});
     })
 
     .fail(function(){
       alert('error');
     })
+
+    .always(() => {
+      $(".form__submit").removeAttr("disabled");
+      });
 
   })
 
@@ -80,8 +85,8 @@ var reloadMessages = function() {
     messages.forEach(function (message) {//配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
       insertHTML = buildHTML(message); //メッセージが入ったHTMLを取得
       $('.main__contents').append(insertHTML);//メッセージを追加
+      $('.new_message')[0].reset();
     $('.main__contents').animate({ scrollTop: $('.main__contents')[0].scrollHeight}, 'fast');
-    // $('.main__contents').animate({ scrollTop: $('.main__contents')[0].scrollHeight});
     //最新のメッセージが一番下に表示されようにスクロールする。
   })
   })
