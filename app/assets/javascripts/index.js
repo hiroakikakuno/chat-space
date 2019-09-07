@@ -24,7 +24,7 @@ $(document).on("turbolinks:load", function() {
 
   function addUser(id, name) {  
     var html = `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>  
-                <input name='group[user_ids][]' type='hidden' value=${ id }>  
+                <input name='group[user_ids][]' type='hidden' value=${ id } class="user-js">  
                 <p class='chat-group-user__name'>${ name }</p>  
                 <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>  
                 </div>`  
@@ -36,15 +36,32 @@ $(document).on("turbolinks:load", function() {
   $("#user-search-field").on("keyup", function() {
     var input = $("#user-search-field").val();
  
+    //
+    var js = $('.user-js');
+    console.log(js);
+    var arr = [];
+    js.each(function(i, ele) {
+      arr.push(ele.value);
+    })
+
+    console.log(arr);
+
+    if (input.length === 0) {
+      $("#user-search-result").empty();
+    }else{
+
   $.ajax({
     type: 'GET',
     url: '/users',
-    data: { keyword: input },
+    data: { keyword: input,
+            user_id: arr},
     dataType: 'json'
   })
 
   .done(function(users){
     $("#user-search-result").empty();  
+
+
     if (users.length !== 0) {  
       users.forEach(function(user) {  
         searchUser(user);  
@@ -57,7 +74,9 @@ $(document).on("turbolinks:load", function() {
   .fail(function(){  
     alert("ユーザー検索に失敗しました")  
   })  
+  }
   });  
+
 
 
 $(document).on("click", ".user-search-add", function(){  

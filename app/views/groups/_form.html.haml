@@ -29,12 +29,12 @@
     .chat-group-form__field--right  
       #chat-group-users  
         .chat-group-user.clearfix  
-          %input{name: "group[user_ids][]", type: "hidden", value: "#{current_user.id}"}  
+          %input{name: "group[user_ids][]", type: "hidden", value: "#{current_user.id}", class: "user-js"}  
           %p.chat-group-user__name  
             = current_user.name  
         - group.users.where.not(id: current_user.id).each do |groupname|
           .chat-group-user.clearfix  
-            = f.hidden_field :user_ids, value: groupname.id, name: "group[user_ids][]"
+            = f.hidden_field :user_ids, value: groupname.id, name: "group[user_ids][]", class: "user-js"
             %p.chat-group-user__name  
               = groupname.name
 

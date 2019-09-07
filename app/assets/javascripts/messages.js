@@ -80,11 +80,10 @@ var reloadMessages = function() {
     messages.forEach(function (message) {//配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
       insertHTML = buildHTML(message); //メッセージが入ったHTMLを取得
       $('.main__contents').append(insertHTML);//メッセージを追加
-    })
-
     $('.main__contents').animate({ scrollTop: $('.main__contents')[0].scrollHeight}, 'fast');
     // $('.main__contents').animate({ scrollTop: $('.main__contents')[0].scrollHeight});
     //最新のメッセージが一番下に表示されようにスクロールする。
+  })
   })
 
   .fail(function() {
